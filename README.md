@@ -47,8 +47,9 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - _TODO: Add whitelisted IP addresses_
 
-Machines within the network can only be accessed by _____.
-- _TODO:  The jump box machiune has What was its IP address?_
+Machines within the network can only be accessed by ssh protocol.
+- The jump box machine has acces to ssh into the ELK server. 
+    EX: ssh RedAdmin@10.2.0.5
 
 A summary of the access policies in place can be found in the table below.
 
