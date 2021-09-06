@@ -35,7 +35,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name           | Function            | IP Address        | Operating System      |
 |----------------|---------------------|-------------------|-----------------------|
-| Jump Box       | Gateway             | 10.0.0.1          | Linux                 |
+| Jump Box       | Gateway             | 10.0.0.4          | Linux                 |
 | WebVM1         | Webserver           | 10.0.0.6          | Linux                 |
 | WebVM2         | webserver           | 10.0.0.7          | Linux                 |
 | ELK server     | Kibana host         | 10.2.0.5          | Linux                 |
@@ -45,7 +45,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+- 10.0.0.162:22
 
 Machines within the network can only be accessed by ssh protocol.
 - The jump box machine has acces to ssh into the ELK server. 
@@ -55,23 +55,25 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| WebVM1   |  No                 | 10.0.0.6             |
+| WebVM2   |  No                 | 10.0.0.7             |
+| 
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- The advantage of automation is time consumption, ubiquitious settings, and streamline connectivity
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Step 1: Install docker.io
+- Step 2: Install pip3
+- Step 3: Increase virtual machine memory
+- Step 4: Download and launch ELK ocntainer and enable associated ports
+- Step 5: Enable docker on reboots
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![Docker ps](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
